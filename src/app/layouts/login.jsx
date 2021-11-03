@@ -11,8 +11,13 @@ const Login = () => {
         console.log(target.name);
     };
 
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        console.log(data);
+    };
+
     return (
-        <form action="">
+        <form onSubmit={handleSubmit}>
             <TextField
                 label="Email"
                 name="email"
@@ -26,6 +31,7 @@ const Login = () => {
                 value={data.password}
                 onChange={handleChange}
             />
+            <button type="submit">Submit</button>
         </form>
     );
 };
