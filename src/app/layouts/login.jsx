@@ -18,7 +18,19 @@ const Login = () => {
             isRequired: { message: "Email isRequired" },
             isEmail: { message: "Email entered incorrectly" }
         },
-        password: { isRequired: { message: "Password isRequired" } }
+        password: {
+            isRequired: { message: "Password isRequired" },
+            isCapitalSymbol: {
+                message: "Password must contain at least one uppercase letter"
+            },
+            isContainDigit: {
+                message: "Password must contain at least one number"
+            },
+            min: {
+                message: "Password must be at least 8 characters long",
+                value: 8
+            }
+        }
     };
 
     useEffect(() => {
