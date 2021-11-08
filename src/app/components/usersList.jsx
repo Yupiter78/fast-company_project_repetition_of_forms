@@ -7,11 +7,13 @@ import GroupList from "./groupList";
 import SearchStatus from "./searchStatus";
 import UserTable from "./usersTable";
 import _ from "lodash";
+import SearchQueryField from "./searchQueryField";
+
 const UsersList = () => {
     const [currentPage, setCurrentPage] = useState(1);
     const [professions, setProfession] = useState();
-    const [searchQuery, setSearchQuery] = useState("");
     const [selectedProf, setSelectedProf] = useState();
+    const [searchQuery, setSearchQuery] = useState("");
     const [sortBy, setSortBy] = useState({ path: "name", order: "asc" });
     const pageSize = 8;
 
@@ -41,12 +43,8 @@ const UsersList = () => {
     }, [selectedProf, searchQuery]);
 
     const handleProfessionSelect = (item) => {
-        if (searchQuery !== "") setSearchQuery("");
+        if (searchQuery) setSearchQuery("");
         setSelectedProf(item);
-    };
-    const handleSearchQuery = ({ target }) => {
-        setSelectedProf(undefined);
-        setSearchQuery(target.value);
     };
 
     const handlePageChange = (pageIndex) => {
@@ -54,6 +52,11 @@ const UsersList = () => {
     };
     const handleSort = (item) => {
         setSortBy(item);
+    };
+    const handleSearchQuery = ({ target }) => {
+        setSelectedProf();
+        console.log("target.value:", target.value);
+        setSearchQuery(target.value);
     };
 
     if (users) {
@@ -103,7 +106,7 @@ const UsersList = () => {
                 )}
                 <div className="d-flex flex-column">
                     <SearchStatus length={count} />
-                    <input
+                    <SearchQueryField
                         type="text"
                         name="searchQuery"
                         placeholder="Search..."
