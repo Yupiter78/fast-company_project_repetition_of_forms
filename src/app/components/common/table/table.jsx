@@ -1,7 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import TableBody from "./tableBody";
-import TableHeader from "./tableHeader";
+import { TableBody, TableHeader } from "./index";
 
 const Table = ({ onSort, selectedSort, columns, data, children }) => {
     return (
