@@ -17,7 +17,11 @@ module.exports = {
         indent: [0, 4],
         "space-before-function-paren": [
             "error",
-            { anonymous: "always", named: "never" }
+            {
+                anonymous: "always",
+                named: "never",
+                asyncArrow: "always"
+            }
         ],
         quotes: [
             "error",
@@ -25,6 +29,7 @@ module.exports = {
             {
                 allowTemplateLiterals: true
             }
-        ]
+        ],
+        "multiline-ternary": [0]
     }
 };
