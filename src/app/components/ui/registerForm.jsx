@@ -11,7 +11,8 @@ const RegisterForm = () => {
         email: "",
         password: "",
         profession: "",
-        gender: "male"
+        gender: "male",
+        qualities: []
     });
     const [professions, setProfessions] = useState([]);
     const [qualities, setQualities] = useState({});
@@ -21,11 +22,12 @@ const RegisterForm = () => {
         api.qualities.fetchAll().then((data) => setQualities(data));
     }, []);
     const handleChange = ({ target }) => {
-        setData((prevState) => ({
-            ...prevState,
-            [target.name]: target.value
-        }));
-        console.log(target.name);
+        if (target) {
+            setData((prevState) => ({
+                ...prevState,
+                [target.name]: target.value
+            }));
+        }
     };
 
     const validatorConfig = {

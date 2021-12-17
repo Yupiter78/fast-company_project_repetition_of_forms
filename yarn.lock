@@ -9639,10 +9639,10 @@
   optionalDependencies:
     "fsevents" "^2.1.3"
 
-"react-select@^5.2.1":
-  "integrity" "sha512-OOyNzfKrhOcw/BlembyGWgdlJ2ObZRaqmQppPFut1RptJO423j+Y+JIsmxkvsZ4D/3CpOmwIlCvWbbAWEdh12A=="
-  "resolved" "https://registry.npmjs.org/react-select/-/react-select-5.2.1.tgz"
-  "version" "5.2.1"
+"react-select@^5.1.0":
+  "integrity" "sha512-SkEBD1AYsSXrIdNj5HBt7+Ehe+jxdiB448J0atJqR6lE3l/GcFlRf4JYB3NlHe/02jrW4AnIQLo1t0IqWrxXOw=="
+  "resolved" "https://registry.npmjs.org/react-select/-/react-select-5.1.0.tgz"
+  "version" "5.1.0"
   dependencies:
     "@babel/runtime" "^7.12.0"
     "@emotion/cache" "^11.4.0"
